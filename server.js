@@ -2,10 +2,11 @@ const express = require('express');
 const db = require('./db')
 const Pizza = require('./Models/pizzaModel')
 const dotenv = require("dotenv");
-
+const bodyParser = require("body-parser"); 
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.json());
 app.use(express.json());
 
 const pizzasRoute = require('./Routes/pizzaRoutes')
